@@ -15,8 +15,8 @@ export class UserController {
     return this.usersServices.insert(user);
   }
 // 'getAll()' returns the list of all the existing users in the database
-  // @ApiBearerAuth()
-  // @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
   @ApiResponse({ status: 200, description: 'Get all users' })
   @ApiResponse({ status: 401, description: 'You should login first' })
   @Get()

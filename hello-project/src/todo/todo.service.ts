@@ -16,7 +16,7 @@ export class TodoService {
     async insertItem(itemDetails: CreateItemDto): Promise<ItemEntity> {
         const itemEntity: ItemEntity = ItemEntity.create();
         itemEntity.content = itemDetails.content;
-        // itemEntity.task = await TaskEntity.findOne(itemDetails.taskID);
+        itemEntity.task = await TaskEntity.findOne(itemDetails.taskID);
         await ItemEntity.save(itemEntity);
         return itemEntity;
     }
