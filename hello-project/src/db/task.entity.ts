@@ -10,9 +10,6 @@ export default class TaskEntity extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 500 })
-  content: string;
-
   @ManyToOne(type => UserEntity, user => user.tasks)
   user: UserEntity;
 
