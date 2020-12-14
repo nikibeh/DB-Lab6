@@ -10,7 +10,6 @@ export default class CategoryEntity extends BaseEntity {
   @Column({ length: 500 })
   name: string;
 
-  // 1:n relation with taskEntity 
   @OneToMany( type => TaskEntity , task => task.category)
   tasks: TaskEntity[];
 

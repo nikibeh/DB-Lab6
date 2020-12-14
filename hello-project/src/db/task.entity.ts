@@ -13,11 +13,9 @@ export default class TaskEntity extends BaseEntity {
   @Column({ length: 500 })
   content: string;
 
-  // n:1 relation with users
   @ManyToOne(type => UserEntity, user => user.tasks)
   user: UserEntity;
 
-  // n:1 relation with categories
   @ManyToOne(type => CategoryEntity, category => category.tasks)
   category: CategoryEntity;
 
